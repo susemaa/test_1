@@ -35,4 +35,14 @@ function getCompressionRate(data: Array<number>): number {
   return serialized.length / data.toString().length;
 };
 
-export { serialize, deserialize, getRandomNumberArray, getCompressionRate };
+function getFilledArray(min: number, max: number): Array<number> {
+  const res: Array<number> = [];
+  for (let i = min; i < max; i += 1) {
+    res.push(i);
+    res.push(i);
+    res.push(i);
+  }
+  return res;
+}
+
+export { serialize, deserialize, getRandomNumberArray, getCompressionRate, getFilledArray };

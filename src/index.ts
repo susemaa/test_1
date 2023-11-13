@@ -1,4 +1,4 @@
-import { getRandomNumberArray, getCompressionRate } from './utils';
+import { getRandomNumberArray, getCompressionRate, getFilledArray } from './utils';
 
 const random50 = getRandomNumberArray(50);
 const rate50 = getCompressionRate(random50);
@@ -16,29 +16,14 @@ const random1000 = getRandomNumberArray(1000);
 const rate1000 = getCompressionRate(random1000);
 console.log('1000 случайных чисел. Выигрыш в процентах: ', 100 - rate1000 * 100);
 
-const every1: Array<number> = [];
-for (let i = 1; i < 10; i += 1) {
-  every1.push(i);
-  every1.push(i);
-  every1.push(i);
-}
+const every1 = getFilledArray(1, 10);
 const rateEvery1 = getCompressionRate(every1);
 console.log('Все числа из 1 цифры 3 раза. Выигрыш в процентах: ', 100 - rateEvery1 * 100);
 
-const every2: Array<number> = [];
-for (let i = 10; i < 100; i += 1) {
-  every2.push(i);
-  every2.push(i);
-  every2.push(i);
-}
+const every2 = getFilledArray(10, 100);
 const rateEvery2 = getCompressionRate(every2);
 console.log('Все числа из 2 цифр 3 раза. Выигрыш в процентах: ', 100 - rateEvery2 * 100);
 
-const every3: Array<number> = [];
-for (let i = 100; i < 301; i += 1) {
-  every3.push(i);
-  every3.push(i);
-  every3.push(i);
-}
+const every3 = getFilledArray(100, 301);
 const rateEvery3 = getCompressionRate(every3);
 console.log('Все числа из 3 цифр 3 раза. Выигрыш в процентах: ', 100 - rateEvery3 * 100);
